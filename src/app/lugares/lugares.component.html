@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Lugares Cercanos</h2>
+            <ul class="list-group">
+                <ng-container *ngFor="let lugar of lugares">
+                    <li class="list-group-item"><a routerLink="/detalle/{{lugar.id}}" [queryParams]="{nom:'jonathan',ape:'mideros'}">{{lugar.name}}</a></li>
+                </ng-container>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>Destacados</h2>
+        </div>
+    </div>
+</div>
+
+
+
+<ul class="list-group">
+    <ng-container *ngFor="let p of posts">
+        <li class="list-group-item">{{p.id}} - {{p.title}}</li>
+    </ng-container>
+</ul>
