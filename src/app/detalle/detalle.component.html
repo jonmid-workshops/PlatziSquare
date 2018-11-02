@@ -1,12 +1,19 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/lugares">lugares</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{lugar.name}}</li>
+    </ol>
+</nav>
+
 <div class="container">
     <h1>{{lugar.name}}</h1>
     <hr>
-    <small>2 km</small>
+    <small>{{lugar.distancia}} km</small>
     <br>
-    <div class="well">
-    <p>
-        Esta es la descripcion del lugar
-    </p>
-    <b>Suscripción: Gratuita</b>
+    <div class="jumbotron">
+        <p>
+            {{lugar.description}}
+        </p>
+        <b>Plan: {{lugar.plan}}</b>
     </div>
 </div>

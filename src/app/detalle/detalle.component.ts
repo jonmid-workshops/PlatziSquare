@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LugaresService } from '../services/lugares.service';
 
 @Component({
     selector: 'app-detalle',
@@ -9,21 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 export class DetalleComponent implements OnInit {
     id:number = 0;
     lugar:any = {};
-    lugares:any = [
-        {id: 1, name: 'Floreria la gardenia'},
-        {id: 2, name: 'Donas la pasadita'},
-        {id: 3, name: 'Veterinaria Huellitas Felices'},
-        {id: 4, name: 'Hotel la gracia'}
-    ];
-    constructor(private route:ActivatedRoute) {
+
+    constructor(private route:ActivatedRoute, private lugaresServices:LugaresService) {
         this.id = this.route.snapshot.params['id'];
-        console.log(this.route.snapshot.queryParams['nom']);
-        this.lugar = this.buscarLugar();
+        this.lugar = lugaresServices.buscarLugar(this.id);
+
+        // console.log(this.route.snapshot.queryParams['action']);
+        // console.log(this.route.snapshot.queryParams['reference']);
     }
+
     ngOnInit() { }
-    buscarLugar(){
-        return this.lugares.filter((lugar) => {
-            return lugar.id == this.id
-        })[0] || null;
-    }
 }

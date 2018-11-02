@@ -1,1 +1,6 @@
-VIDEO: 7.7
+VIDEO: 8.4
+
+
+
+
+https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md
