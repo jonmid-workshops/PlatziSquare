@@ -4,10 +4,12 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule }   from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
+import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { environment } from '../environments/environment';
+
 
 import { AppComponent } from './app.component';
 import { ResaltarDirective } from './directives/resaltar.directive';
@@ -16,9 +18,9 @@ import { ContarClicksDirective } from './directives/contar-clicks.directive';
 import { DetalleComponent } from './detalle/detalle.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { CrearComponent } from './crear/crear.component';
 
 import { LugaresService } from './services/lugares.service';
-import { CrearComponent } from './crear/crear.component';
 
 const appRoutes:Routes = [
     {path: '', component: LugaresComponent},
