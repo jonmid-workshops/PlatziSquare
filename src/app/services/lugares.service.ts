@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable()
@@ -14,19 +13,11 @@ export class LugaresService {
     //     {id: 5, plan: 'pagado', cercania: 3, distancia: 35, active: true, name: 'Hotel la gracia', description: 'Descripcion de este negocio. Mas adelante tendremos mas informacion.'},
     //     {id: 6, plan: 'gratuito', cercania: 3, distancia: 120, active: false, name: 'Zapateria el Clavo', description: 'Descripcion de este negocio. Mas adelante tendremos mas informacion.'}
     // ];
-
-    lugares: Observable<any[]>;
     
     constructor (private http: HttpClient, private db:AngularFireDatabase) { }
 
-    getSeeschweiler(): Observable<any>{
-        return this.http.get('https://jsonplaceholder.typicode.com/posts');
-    }
-
-    public getLugares() {
-        this.lugares = this.db.list('lugares').valueChanges();
-        return this.lugares;
-        
+    public getLugares() {        
+        return this.db.list('lugares').valueChanges();
     }
 
     public buscarLugar(id) {
@@ -34,13 +25,6 @@ export class LugaresService {
     }
 
     public guardarLugar(lugar){
-        // console.log(lugar);
-        // this.afDB.database.ref('lugares/1').set(lugar);
-        // this.afDB.list('lugares').push(lugar).then(_ => {
-        //     // this.memory = {}
-        //     console.log('success')
-        // })
-        // this.db.list('/lugares').push(lugar);
-        this.db.list('/lugares').push(lugar);
+        this.db.database.ref('lugares/'+lugar.id).set(lugar);
     }
 }
