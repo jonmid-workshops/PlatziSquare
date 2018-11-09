@@ -1,17 +1,18 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            <h2>Lugares Cercanos</h2>
-            <a class="btn btn-primary" routerLink="/crear" role="button">Crear nuevo negocio</a>
+        <div class="col-md-6">
+            <br><h2>Lugares Cercanos</h2><br>
+            <a class="btn btn-primary" routerLink="/crear/new" role="button">Crear nuevo negocio</a>
+            <hr>
             <ul class="list-group">
                 <ng-container *ngFor="let lugar of lugares | async">
-                    <li class="list-group-item"><a routerLink="/detalle/{{lugar.id}}" [queryParams]="{action:'edit',reference:'google'}">{{lugar.name}}</a></li>
+                    <li class="list-group-item"><a routerLink="/crear/{{lugar.id}}" [queryParams]="{action:'edit',reference:'google'}">{{lugar.name}}</a></li>
                 </ng-container>
             </ul>
         </div>
-        <div class="col-md-4">
-            <h2>Destacados</h2>
+        <div class="col-md-6">
+            <br><h2>Destacados</h2><br>
         </div>
     </div>
 </div>
