@@ -12,10 +12,7 @@ export class LugaresService {
     }
 
     public getLugar(id){
-        return this.db.database.ref('lugares/'+id);
-        // return this.firestore.collection('cats').doc(documentId).snapshotChanges();
-
-        // return this.db.collection('lugares').doc(id).snapshotChanges();
+        return this.db.object('lugares/'+id);
     }
 
     public buscarLugar(id) {

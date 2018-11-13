@@ -18,9 +18,9 @@ export class CrearComponent implements OnInit {
 
         if (this.id != 'new') {
             // ACTUALIZAR REGISTRO
-            this.lugar = lugaresService.getLugar(this.id);
-            console.log('jajajajaja');
-            console.log(lugaresService.getLugar(this.id));
+            lugaresService.getLugar(this.id).valueChanges().subscribe(lugar => {
+                this.lugar = lugar;
+            });
         } else {
             // CREAR REGISTRO
         }
