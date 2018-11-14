@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { post } from 'selenium-webdriver/http';
 
 @Injectable()
 export class LugaresService {

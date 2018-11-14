@@ -6,7 +6,7 @@
             <a class="btn btn-primary" routerLink="/crear/new" role="button">Crear nuevo negocio</a>
             <hr>
             <ul class="list-group">
-                <ng-container *ngFor="let lugar of lugares | async">
+                <ng-container *ngFor="let lugar of lugares">
                     <li class="list-group-item">
                         <a routerLink="/crear/{{lugar.id}}" [queryParams]="{action:'edit',reference:'google'}"><h5>{{lugar.name | uppercase}}</h5></a>
                         <br><small><b>Creado:</b> &nbsp; {{lugar.id | date:'medium'}}</small>

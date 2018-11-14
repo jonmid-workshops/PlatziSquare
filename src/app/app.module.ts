@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { LugaresService } from './services/lugares.service';
+import { AutorizacionService } from './services/autorizacion.service';
+import { GuardService } from './services/guard.service';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
@@ -20,13 +22,17 @@ import { DetalleComponent } from './detalle/detalle.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CrearComponent } from './crear/crear.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const appRoutes:Routes = [
     {path: '', component: LugaresComponent},
     {path: 'lugares', component: LugaresComponent},
     {path: 'detalle/:id', component: DetalleComponent},
     {path: 'contacto', component: ContactoComponent},
-    {path: 'crear/:id', component: CrearComponent}
+    {path: 'crear/:id', component: CrearComponent, canActivate:[GuardService]},
+    {path: 'login', component: LoginComponent},
+    {path: 'registro', component: RegistroComponent}
 ];
 
 @NgModule({
@@ -38,7 +44,9 @@ const appRoutes:Routes = [
         DetalleComponent,
         LugaresComponent,
         ContactoComponent,
-        CrearComponent
+        CrearComponent,
+        LoginComponent,
+        RegistroComponent
     ],
     imports: [
         BrowserModule,
@@ -52,7 +60,7 @@ const appRoutes:Routes = [
             apiKey: 'AIzaSyBFJQZ1JaabtXjyRoJ9r-YIOtQp9vLzS14'
         })
     ],
-    providers: [LugaresService],
+    providers: [LugaresService, AutorizacionService, GuardService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,15 +1,10 @@
-import { Component } from '@angular/core';
-import { AutorizacionService } from './services/autorizacion.service';
+import { Injectable } from '@angular/core';
+import { CanActivate } from '@angular/router';
+import { AutorizacionService } from './autorizacion.service';
 
-@Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
-})
-export class AppComponent {
+@Injectable()
+export class GuardService implements CanActivate {
     loggedIn = false;
-    title:string = 'My first AGM project';
-    
     constructor(private autorizacionService:AutorizacionService) {
         autorizacionService.isLogged().subscribe((result) => {
             if (result && result.uid) {
@@ -21,8 +16,7 @@ export class AppComponent {
             this.loggedIn = false;
         });
     }
-
-    public signOff(){
-        this.autorizacionService.signOff();
+    canActivate(){
+        return this.loggedIn;
     }
 }
