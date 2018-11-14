@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { post } from 'selenium-webdriver/http';
 
 @Injectable()
 export class LugaresService {
@@ -15,12 +16,21 @@ export class LugaresService {
         return this.db.object('lugares/'+id);
     }
 
-    public buscarLugar(id) {
-        // return this.lugares.filter((lugar) => {return lugar.id == id})[0] || null;
-    }
-
     public guardarLugar(lugar){
         this.db.database.ref('lugares/'+lugar.id).set(lugar);
+    }
+
+    public actualizarLugar(lugar){
+        this.db.database.ref('lugares/'+lugar.id).set(lugar);
+    }
+
+
+
+
+    // ******************************************************************************************
+
+    public buscarLugar(id) {
+        // return this.lugares.filter((lugar) => {return lugar.id == id})[0] || null;
     }
 
     public obtenerGeoData(direccion){

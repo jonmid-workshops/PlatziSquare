@@ -40,6 +40,6 @@
         <input type="text" class="form-control" placeholder="Ingresar el plan" [(ngModel)]="lugar.pais">
     </div>
     <hr>
-    <button type="button" class="btn btn-primary" (click)="guardarLugar()">Enviar</button>&nbsp;
-    <a class="btn btn-secondary" routerLink="/lugares" role="button">Cancelar</a>
+    <button type="button" class="btn btn-primary" (click)="guardarLugar()"><i class="{{styleButton}}"></i> {{stringButton}}</button>&nbsp;
+    <a class="btn btn-secondary" routerLink="/lugares" role="button"><i class="fa fa-ban"></i> Cancelar</a>
 </div>

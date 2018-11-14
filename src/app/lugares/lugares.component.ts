@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Component({
     selector: 'app-lugares',
     templateUrl: './lugares.component.html',
-    styleUrls: ['./lugares.component.css']
+    styleUrls: ['./lugares.component.css'],
 })
 export class LugaresComponent implements OnInit {
     lat:number = 4.6560663;

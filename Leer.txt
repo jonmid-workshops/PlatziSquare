@@ -1,6 +1,15 @@
-VIDEO: 8.7
+VIDEO: 12.2
 
 
 
 
 https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md
+
+
+
+
+***** INSTALAR FONTAWESOME *****
+https://fontawesome.com/v4.7.0/icons/
+
+npm i font-awesome --save
+@import "~font-awesome/css/font-awesome.min.css";
