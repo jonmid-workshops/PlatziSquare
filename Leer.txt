@@ -20,3 +20,9 @@ https://www.udemy.com/react-de-principiante-a-experto-creando-mas-de-10-aplicaci
 https://www.udemy.com/python-django-dev-to-deployment/
 https://www.google.com.co/search?q=apollo+graphql&lr=lang_es&tbs=lr:lang_1es,qdr:y&source=lnt&sa=X&ved=0ahUKEwibw-X93MzeAhXKtVMKHXe-BCYQpwUIJA&biw=1440&bih=790
 https://www.alevsk.com/2017/11/introduccion-a-graphql-queries-y-mutations/
+https://www.howtographql.com/
+https://postparaprogramadores.com/las-mejores-tendencias-javascript-2018/
+https://nec.is/writing/graphql-with-next-js-and-apollo/
+
+
+https://justcodeit.io/como-pasar-plantilla-en-bootstrap-a-angular/
