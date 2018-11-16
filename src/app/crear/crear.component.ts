@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LugaresService } from '../services/lugares.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { FormControl } from '@angular/forms';
+// import 'rxjs/Rx';
 
 @Component({
     selector: 'app-crear',
@@ -12,6 +15,9 @@ export class CrearComponent implements OnInit {
     lugar:any = {};
     stringButton:string = null;
     styleButton:string = null;
+
+    results$:Observable<any>;
+    private searchField:FormControl;
 
     constructor(private lugaresService:LugaresService, private router:Router, private route:ActivatedRoute) {
         this.id = this.route.snapshot.params['id'];
